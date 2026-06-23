@@ -333,7 +333,6 @@ section h2 {
       Saya terbiasa mengembangkan tampilan antarmuka yang tidak hanya menarik secara visual, tetapi juga mudah digunakan oleh pengguna.
       Melalui berbagai pengalaman proyek seperti ZOO WHIZ dan Sistem Kasir Taberu Bento, saya terus mengasah kemampuan dalam menciptakan solusi digital yang interaktif dan user-friendly.
     </p>
-    <button class="btn">View Projects 🚀</button>
   </div>
 
   <div class="right fade-up">
@@ -357,7 +356,7 @@ section h2 {
         </div>
 
         <div class="stat-box">
-          <h1>2+</h1>
+          <h1>3+</h1>
           <p>Key Projects</p>
         </div>
 
@@ -567,16 +566,177 @@ section h2 {
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="box fade-up">
-    <h3>🎓 ZOO WHIZ</h3>
-    <p>Aplikasi pembelajaran bahasa Inggris interaktif untuk anak-anak dengan pendekatan visual.</p>
+  <!-- ZOO WHIZ -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <div>
+        <h3>🎓 ZOO WHIZ</h3>
+        <div class="timeline-tags">
+          <span>Frontend</span>
+          <span>Education</span>
+          <span>UI/UX</span>
+        </div>
+      </div>
+
+      <a
+        href="https://drive.google.com/drive/folders/1fmi8wPqFvRq1iWTVF-XjkUzf-rJ_7-N4?usp=drive_link"
+        target="_blank"
+        style="
+          text-decoration:none;
+          border:1px solid #00b4d8;
+          color:#00b4d8;
+          padding:8px 16px;
+          border-radius:20px;
+          font-weight:600;
+        ">
+        View Drive
+      </a>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        ZOO WHIZ merupakan aplikasi pembelajaran bahasa Inggris interaktif
+        untuk anak-anak yang menggabungkan pendekatan visual, permainan,
+        dan aktivitas edukatif untuk meningkatkan pengalaman belajar.
+      </p>
+
+      <ul>
+        <li>Membuat antarmuka yang ramah anak dan mudah digunakan.</li>
+        <li>Mengembangkan desain halaman pembelajaran interaktif.</li>
+        <li>Berfokus pada pengalaman pengguna dan visual yang menarik.</li>
+      </ul>
+    </div>
+
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>UI/UX</span>
+    </div>
   </div>
 
-  <div class="box fade-up">
-    <h3>💰 Sistem Kasir Taberu Bento</h3>
-    <p>Website kasir sederhana untuk membantu transaksi dan pencatatan penjualan.</p>
+  <!-- TABERU BENTO -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <div>
+        <h3>💰 Sistem Kasir Taberu Bento</h3>
+        <div class="timeline-tags">
+          <span>Web Development</span>
+          <span>Cashier System</span>
+          <span>Database</span>
+        </div>
+      </div>
+
+      <a
+        href="https://drive.google.com/drive/folders/1G716JFVxmPHctCaW1qrvFjezXDa8Duqo?usp=drive_link"
+        target="_blank"
+        style="
+          text-decoration:none;
+          border:1px solid #00b4d8;
+          color:#00b4d8;
+          padding:8px 16px;
+          border-radius:20px;
+          font-weight:600;
+        ">
+        View Drive
+      </a>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        Sistem kasir berbasis web yang dirancang untuk membantu proses
+        transaksi harian, pengelolaan stok bahan baku, serta pembuatan
+        laporan pendapatan secara efisien.
+      </p>
+
+      <ul>
+        <li>Multi-user Admin dan Owner.</li>
+        <li>Manajemen stok barang dan bahan baku.</li>
+        <li>Laporan harian dan bulanan.</li>
+        <li>Dashboard monitoring transaksi.</li>
+      </ul>
+    </div>
+
+    <div class="skills">
+      <span>PHP</span>
+      <span>MySQL</span>
+      <span>HTML/CSS</span>
+      <span>JavaScript</span>
+    </div>
   </div>
-</section>
+
+  <!-- SISTEM PERPUSTAKAAN -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <div>
+        <h3>📚 Sistem Perpustakaan</h3>
+        <div class="timeline-tags">
+          <span>System Analysis</span>
+          <span>Documentation</span>
+        </div>
+      </div>
+
+      <a
+        href="https://docs.google.com/document/d/1UCtnIquslgLgQz6Cl6VbcAdSGWgcHVS7/edit?usp=sharing&ouid=112090673651636769874&rtpof=true&sd=true"
+        target="_blank"
+        style="
+          text-decoration:none;
+          border:1px solid #00b4d8;
+          color:#00b4d8;
+          padding:8px 16px;
+          border-radius:20px;
+          font-weight:600;
+        ">
+        View Doc
+      </a>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        Analisis dan perancangan sistem informasi perpustakaan yang
+        bertujuan meningkatkan efisiensi pengelolaan data buku,
+        anggota, peminjaman, dan pengembalian.
+      </p>
+
+      <ul>
+        <li>Menyusun kebutuhan sistem dan dokumentasi.</li>
+        <li>Membuat use case diagram dan activity diagram.</li>
+        <li>Merancang alur proses bisnis perpustakaan.</li>
+        <li>Menyusun spesifikasi sistem secara terstruktur.</li>
+      </ul>
+    </div>
+
+    <div class="skills">
+      <span>System Analysis</span>
+      <span>Documentation</span>
+      <span>UML</span>
+    </div>
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    const skill = document.getElementById("skillShape");
+
+    setTimeout(() => {
+      if(skill){
+        skill.setAttribute(
+          "points",
+          "100,35 150,70 120,130 75,130 65,70"
+        );
+      }
+    }, 600);
+    </script>
 
 <section id="contact" style="text-align:center;">
   <h2>Contact Me</h2>
