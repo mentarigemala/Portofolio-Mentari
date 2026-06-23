@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentari Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #1e293b;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR: Diubah dari putih polos ke gradasi warna Biru Muda - Pink Muda Pastel */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, #e0f2fe, #ffe4e6); 
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  z-index: 100;
+}
+
+/* Tulisan Brand "MyPortfolio" diatur agar lebih kontras */
+nav h2 {
+  color: #0f172a;
+}
+
+/* AKSEN NAVBAR: Pink yang sedikit lebih tegas */
+nav span { color: #ff5c8a; }
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* HOVER MENU: Berubah ke warna Pink Tua saat didekati kursor */
+nav ul li a:hover { color: #ff5c8a; }
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+}
+
+.left { max-width: 550px; }
+
+.left h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.left p {
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 25px;
+  background: linear-gradient(135deg, #90e0ef, #ffb7b2);
+  color: #0f172a;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(144, 224, 239, 0.4);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 183, 178, 0.6);
+}
+
+/* IMAGE */
+.right img {
+  width: 270px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+/* SECTION */
+section {
+  padding: 90px 120px;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #0f172a;
+}
+
+/* TIMELINE CARD */
+.timeline-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 35px;
+  margin-bottom: 35px;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.timeline-tags span {
+  background: rgba(255, 143, 171, 0.15);
+  color: #ff5c8a;
+  padding: 6px 12px;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.timeline-date {
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  padding: 6px 15px;
+  border-radius: 15px;
+  font-size: 13px;
+}
+
+.timeline-content {
+  border-left: 3px solid #00b4d8;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.timeline-content p {
+  margin-bottom: 14px;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.timeline-content ul {
+  padding-left: 18px;
+  color: #475569;
+}
+
+.timeline-content li {
+  margin-bottom: 8px;
+}
+
+/* SKILLS */
+.skills {
+  margin-top: 20px;
+}
+
+.skills span {
+  background: #e2e8f0;
+  color: #334155;
+  padding: 8px 15px;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-size: 13px;
+}
+
+/* PROJECT BOX */
+.box {
+  background: rgba(255, 183, 178, 0.15);
+  border: 1px solid rgba(255, 183, 178, 0.3);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.box h3 {
+  color: #ff5c8a;
+  margin-bottom: 8px;
+}
+
+/* CONTACT */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.socials a {
+  font-size: 25px;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 50%;
+  transition: 0.3s;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  background: #00b4d8;
+  color: white;
+  transform: scale(1.2);
+}
+
+/* ANIMATION */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== ACHIEVEMENT SECTION ===== */
+.achievement-wrapper {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+  margin-top: 40px;
+}
+
+.achievement-left, .achievement-right {
+  flex: 1;
+}
+
+/* STAT BOX */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.stat-box {
+  background: rgba(144, 224, 239, 0.15);
+  border: 1px solid rgba(144, 224, 239, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  background: rgba(144, 224, 239, 0.25);
+}
+
+.stat-box h1 {
+  font-size: 42px;
+  color: #0096c7;
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* MATRIX */
+.matrix-box {
+  background: linear-gradient(145deg, #e0f2fe, #ffe4e6);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.matrix-box h3 {
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #0f172a;
+}
+
+.matrix-box svg {
+  width: 260px;
+  margin: auto;
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>My<span>Portofolio</span></h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="about">
+  <div class="left fade-up">
+    <h1>Mentari Gemala Syahdini Camila</h1>
+    <p>
+      Saya merupakan mahasiswa Informatika yang memiliki minat besar dalam pengembangan front-end dan desain UI/UX. 
+      Saya terbiasa mengembangkan tampilan antarmuka yang tidak hanya menarik secara visual, tetapi juga mudah digunakan oleh pengguna.
+      Melalui berbagai pengalaman proyek seperti ZOO WHIZ dan Sistem Kasir Taberu Bento, saya terus mengasah kemampuan dalam menciptakan solusi digital yang interaktif dan user-friendly.
+    </p>
+    <button class="btn">View Projects 🚀</button>
+  </div>
+
+  <div class="right fade-up">
+    <img src="Mentari.jpg" alt="foto">
+  </div>
+</section>
+
+<!-- ACHIEVEMENT -->
+<section id="achievement">
+  <h2>Achievement & Competency</h2>
+
+  <div class="achievement-wrapper">
+
+    <!-- LEFT -->
+    <div class="achievement-left fade-up">
+      <div class="stats">
+
+        <div class="stat-box">
+          <h1>3.06</h1>
+          <p>GPA Score</p>
+        </div>
+
+        <div class="stat-box">
+          <h1>2+</h1>
+          <p>Key Projects</p>
+        </div>
+
+        <div class="stat-box">
+          <h1>6+</h1>
+          <p>Tools Used</p>
+        </div>
+
+        <div class="stat-box">
+          <h1>5+</h1>
+          <p>Experiences</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="achievement-right fade-up">
+      <div class="matrix-box">
+        <h3>Competency Matrix</h3>
+
+        <svg viewBox="0 0 200 200">
+          <!-- outline -->
+          <polygon points="100,20 160,60 140,140 60,140 40,60"
+                   fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+          <!-- skill -->
+          <polygon id="skillShape"
+          points="100,35 150,70 120,130 75,130 65,70"
+          fill="rgba(0, 180, 216, 0.4)"
+          stroke="#00b4d8"
+          stroke-width="2.5"
+          />
+
+          <!-- LABEL SKILL -->
+          <text x="80" y="15" font-size="10" fill="#0f172a" font-weight="600">Frontend</text>
+          <text x="165" y="65" font-size="10" fill="#0f172a" font-weight="600">UI/UX</text>
+          <text x="120" y="155" font-size="10" fill="#0f172a" font-weight="600">Teamwork</text>
+          <text x="20" y="65" font-size="10" fill="#0f172a" font-weight="600">Design</text>
+          <text x="5" y="155" font-size="10" fill="#0f172a" font-weight="600">Communication</text>
+        </svg>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PROFESSIONAL JOURNEY ===================== -->
+<section id="journey">
+  <h2>Professional Journey</h2>
+
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <div>
+        <h3>Anggota KPPS (KPPS 4)</h3>
+        <div class="timeline-tags">
+          <span>Government</span>
+          <span>Administration</span>
+        </div>
+      </div>
+      <div class="timeline-date">
+        Jan 2024 – Feb 2024 <br> Oct 2024 – Nov 2024
+      </div>
+    </div>
+
+    <p style="margin-top: 10px; font-weight: 600; color: #00b4d8;">Komisi Pemilihan Umum (KPU)</p>
+
+    <div class="timeline-content">
+      <p>
+        Dalam peran sebagai anggota KPPS, saya terlibat langsung dalam pelaksanaan proses pemungutan dan penghitungan suara 
+        yang merupakan bagian penting dari sistem demokrasi nasional. Posisi ini menuntut tingkat ketelitian yang tinggi, 
+        tanggung jawab penuh terhadap integritas data, serta kemampuan bekerja dalam tekanan waktu yang ketat.
+      </p>
+
+      <p>
+        Saya tidak hanya menjalankan tugas administratif, tetapi juga berkontribusi dalam memastikan seluruh proses berjalan 
+        secara transparan, akurat, dan profesional, sekaligus memberikan pelayanan yang baik kepada masyarakat dari berbagai latar belakang.
+      </p>
+
+      <ul>
+        <li>Mengelola administrasi pemilih dan dokumen sensitif dengan tingkat akurasi tinggi.</li>
+        <li>Berkolaborasi dengan tim dalam menjaga kelancaran seluruh rangkaian proses pemungutan suara.</li>
+        <li>Memberikan pelayanan publik secara profesional dan komunikatif.</li>
+      </ul>
+    </div>
+
+    <div class="skills">
+      <span>Administration</span>
+      <span>Coordination</span>
+      <span>Public Service</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ===================== ORGANIZATIONAL EXPERIENCE ===================== -->
+<section id="organization">
+  <h2>Organizational Experience</h2>
+
+  <!-- SEKRETARIS 2 -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <h3>Sekretaris 2 – Himpunan Mahasiswa Informatika (HMIF)</h3>
+      <div class="timeline-date">Apr 2024 – Feb 2025</div>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        Dalam peran sebagai Sekretaris 2, saya berfokus pada pengelolaan administrasi organisasi secara sistematis dan terstruktur. 
+        Saya memastikan bahwa setiap kegiatan organisasi terdokumentasi dengan baik serta mendukung kelancaran komunikasi internal antar divisi.
+      </p>
+
+      <p>
+        Peran ini membentuk kemampuan saya dalam mengelola informasi, meningkatkan ketelitian dalam dokumentasi, 
+        serta memperkuat koordinasi tim dalam lingkungan organisasi yang dinamis.
+      </p>
+
+      <ul>
+        <li>Menyusun notulensi rapat secara terstruktur dan informatif.</li>
+        <li>Mengelola arsip organisasi agar terdokumentasi dengan rapi dan mudah diakses.</li>
+        <li>Mendukung koordinasi antar divisi dalam pelaksanaan program kerja.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HISTORIZ 2024 -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <h3>Bendahara 1 – HISTORIZ 2024</h3>
+      <div class="timeline-date">Jul 2024 – Dec 2024</div>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        HISTORIZ merupakan program orientasi mahasiswa baru Fakultas Sains dan Teknologi Universitas Al Azhar Indonesia. 
+        Dalam kegiatan ini, saya dipercaya sebagai Bendahara 1 yang bertanggung jawab atas pengelolaan keuangan kegiatan dalam skala besar.
+      </p>
+
+      <p>
+        Posisi ini menuntut tingkat integritas, ketelitian, serta kemampuan manajemen keuangan yang baik dalam memastikan 
+        seluruh arus dana berjalan transparan dan sesuai perencanaan.
+      </p>
+
+      <ul>
+        <li>Mengelola dana kegiatan sekitar ±84 juta rupiah secara transparan dan akuntabel.</li>
+        <li>Menyusun laporan keuangan yang sistematis dan mudah dipahami.</li>
+        <li>Mengontrol arus kas selama kegiatan berlangsung.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SEKRETARIS 1 -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <h3>Sekretaris 1 – Himpunan Mahasiswa Informatika (HMIF)</h3>
+      <div class="timeline-date">Apr 2025 – Mar 2026</div>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        Sebagai Sekretaris 1, saya memiliki tanggung jawab utama dalam mengelola keseluruhan sistem administrasi organisasi 
+        serta memastikan kelancaran komunikasi formal organisasi.
+      </p>
+
+      <p>
+        Saya berperan dalam penyusunan berbagai dokumen resmi serta mendukung proses pengambilan keputusan organisasi 
+        seperti melalui dokumentasi yang akurat dan terstruktur.
+      </p>
+
+      <ul>
+        <li>Menyusun proposal, surat resmi, dan dokumen organisasi.</li>
+        <li>Mengelola dokumentasi kegiatan dan arsip penting organisasi.</li>
+        <li>Mendukung proses pengambilan keputusan melalui data dan dokumentasi.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HISTORIZ 2025 -->
+  <div class="timeline-card fade-up">
+    <div class="timeline-header">
+      <h3>Bendahara 1 – HISTORIZ 2025</h3>
+      <div class="timeline-date">Jun 2025 – Dec 2025</div>
+    </div>
+
+    <div class="timeline-content">
+      <p>
+        Saya kembali dipercaya sebagai Bendahara 1 dalam kegiatan HISTORIZ, dengan tanggung jawab yang lebih besar dalam 
+        pengelolaan dan perencanaan keuangan kegiatan.
+      </p>
+
+      <p>
+        Pengalaman ini semakin mengasah kemampuan saya dalam manajemen keuangan, perencanaan anggaran, serta menjaga transparansi laporan.
+      </p>
+
+      <ul>
+        <li>Mengelola dana kegiatan sekitar ±78 juta rupiah.</li>
+        <li>Menyusun perencanaan anggaran kegiatan secara rinci.</li>
+        <li>Membuat laporan keuangan akhir yang transparan dan akurat.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="box fade-up">
+    <h3>🎓 ZOO WHIZ</h3>
+    <p>Aplikasi pembelajaran bahasa Inggris interaktif untuk anak-anak dengan pendekatan visual.</p>
+  </div>
+
+  <div class="box fade-up">
+    <h3>💰 Sistem Kasir Taberu Bento</h3>
+    <p>Website kasir sederhana untuk membantu transaksi dan pencatatan penjualan.</p>
+  </div>
+</section>
+
+<section id="contact" style="text-align:center;">
+  <h2>Contact Me</h2>
+
+  <div class="socials">
+    <a href="https://instagram.com/mentarigmla" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:mentarigemala10@gmail.com"><i class="fas fa-envelope"></i></a>
+    <a href="https://linkedin.com/in/mentari-gemala-syahdini-camila-1256a939b" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
+
+<script>
+const elements = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+
+const skill = document.getElementById("skillShape");
+
+setTimeout(() => {
+  if(skill){
+    skill.setAttribute(
+      "points",
+      "100,35 150,70 120,130 75,130 65,70"
+    );
+  }
+}, 600);
+</script>
+
+</body>
+</html>
